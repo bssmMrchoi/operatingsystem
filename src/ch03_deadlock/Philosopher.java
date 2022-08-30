@@ -23,11 +23,12 @@ public class Philosopher extends Thread{
 
     @Override
     public void run() {
+        int randTime = (int) ((Math.random() * 1000) + 500);
         //while(true) {
             try {
                 //0.5초 이내 랜덤 생각
-                System.out.println(name + ": " + (int) ((Math.random() * 1000) + 500) + "ms wait");
-                Thread.sleep((int) (Math.random() * 10000) % 500);
+                System.out.println(name + ": " + randTime + "ms wait");
+                Thread.sleep(randTime);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
